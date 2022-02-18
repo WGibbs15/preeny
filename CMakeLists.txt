@@ -44,6 +44,8 @@ add_library(ensock SHARED src/ensock.c)
 target_link_libraries(ensock common-preeny dl)
 add_library(writeout SHARED src/writeout.c)
 target_link_libraries(writeout common-preeny dl)
+add_library(udp_to_tcp_convert SHARED src/udp_to_tcp_convert_base.c)
+target_link_libraries(udp_to_tcp_convert common-preeny dl pthread)
 
 # Random
 add_library(desrand SHARED src/desrand.c)
@@ -59,9 +61,9 @@ target_link_libraries(detime common-preeny dl)
 add_library(deuid SHARED src/deuid.c)
 target_link_libraries(deuid common-preeny dl)
 
-# Patch
-add_library(patch SHARED src/patch.c)
-target_link_libraries(patch common-preeny ini_config dl)
+# Patch <- This is broken
+# add_library(patch SHARED src/patch.c)
+# target_link_libraries(patch common-preeny ini_config dl)
 
 # EOF killer
 add_library(eofkiller SHARED src/eofkiller.c)
